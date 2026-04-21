@@ -56,23 +56,19 @@ def run(balance):
                           f"outputs/task_2_{'balanced' if balance else 'imbalanced'}_test.png")
 
     class_names = ["Class-0", "Class-1"]
-    print("#" * 40)
     print(f"\nClassifier performance on training dataset (balance={balance})\n")
     print(classification_report(y_train, classifier.predict(X_train),
                                  target_names=class_names, zero_division=0))
-    print("#" * 40 + "\n")
-    print("#" * 40)
     print(f"\nClassifier performance on test dataset (balance={balance})\n")
     print(classification_report(y_test, y_test_pred,
                                  target_names=class_names, zero_division=0))
-    print("#" * 40 + "\n")
 
 
 if __name__ == "__main__":
     # спочатку без балансу — демонструємо проблему
-    print("=== БЕЗ балансу ===\n")
+    print("Без балансу:")
     run(balance=False)
-    print("\n=== З балансуванням class_weight='balanced' ===\n")
+    print("\nЗ балансом class_weight='balanced':")
     run(balance=True)
 
 if matplotlib.get_backend().lower() != "agg":

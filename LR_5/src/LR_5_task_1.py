@@ -72,17 +72,13 @@ def run(classifier_type):
                           f"outputs/task_1_{classifier_type}_test.png")
 
     class_names = ["Class-0", "Class-1", "Class-2"]
-    print("#" * 40)
     print(f"\n{label} performance on training dataset\n")
     print(classification_report(y_train, classifier.predict(X_train),
                                  target_names=class_names, zero_division=0))
-    print("#" * 40 + "\n")
 
-    print("#" * 40)
     print(f"\n{label} performance on test dataset\n")
     print(classification_report(y_test, y_test_pred,
                                  target_names=class_names, zero_division=0))
-    print("#" * 40 + "\n")
 
     # оцінка довірливості
     test_datapoints = np.array([[5, 5], [3, 6], [6, 4],

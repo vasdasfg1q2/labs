@@ -24,7 +24,7 @@ dtype: int64
 X shape: (22716, 5), y shape: (22716,)
 Розподіл класів (low/mid/high): [7349 7622 7745]
 
-=== GaussianNB на RENFE ===
+GaussianNB на RENFE:
               precision    recall  f1-score   support
 
          low       0.75      0.95      0.84      1837

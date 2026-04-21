@@ -26,7 +26,7 @@ parameter_grid = [
 metrics = ["precision_weighted", "recall_weighted"]
 
 for metric in metrics:
-    print("\n##### Searching optimal parameters for", metric)
+    print(f"\nSearching optimal parameters for {metric}:")
 
     classifier = GridSearchCV(
         ExtraTreesClassifier(random_state=0),

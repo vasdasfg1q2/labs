@@ -1,4 +1,3 @@
-########################################
 
 RandomForest performance on training dataset
 
@@ -12,9 +11,6 @@ RandomForest performance on training dataset
    macro avg       0.87      0.87      0.87       675
 weighted avg       0.87      0.87      0.87       675
 
-########################################
-
-########################################
 
 RandomForest performance on test dataset
 
@@ -27,8 +23,6 @@ RandomForest performance on test dataset
     accuracy                           0.87       225
    macro avg       0.87      0.87      0.87       225
 weighted avg       0.87      0.87      0.87       225
-
-########################################
 
 
 Confidence measure:

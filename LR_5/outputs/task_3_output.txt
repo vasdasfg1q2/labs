@@ -1,5 +1,5 @@
 
-##### Searching optimal parameters for precision_weighted
+Searching optimal parameters for precision_weighted:
 
 Grid scores for the parameter grid:
   {'max_depth': 2, 'n_estimators': 100} --> 0.85
@@ -27,7 +27,7 @@ Performance report:
 weighted avg       0.86      0.86      0.86       225
 
 
-##### Searching optimal parameters for recall_weighted
+Searching optimal parameters for recall_weighted:
 
 Grid scores for the parameter grid:
   {'max_depth': 2, 'n_estimators': 100} --> 0.843

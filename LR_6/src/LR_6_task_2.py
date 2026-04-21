@@ -61,7 +61,7 @@ clf = GaussianNB()
 clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 
-print("\n=== GaussianNB на RENFE ===")
+print("\nGaussianNB на RENFE:")
 print(classification_report(y_test, y_pred, target_names=["low", "mid", "high"]))
 
 cm = confusion_matrix(y_test, y_pred)

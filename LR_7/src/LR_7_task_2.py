@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.datasets import load_iris
-from sklearn.metrics import pairwise_distances_argmin
+from sklearn.metrics import adjusted_rand_score, pairwise_distances_argmin
 
 if sys.stdout.encoding.lower() != "utf-8":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
@@ -89,7 +89,6 @@ plt.savefig("outputs/task_2_sklearn_k3.png", dpi=120)
 plt.close()
 
 # порівняння з true labels — adjusted_rand_score
-from sklearn.metrics import adjusted_rand_score
 ari = adjusted_rand_score(y, labels3_sk)
 print(f"Iris: 150 точок, 4 ознаки, 3 справжніх класи")
 print(f"KMeans (k=5) inertia = {kmeans5.inertia_:.2f}")

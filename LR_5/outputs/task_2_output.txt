@@ -2,9 +2,7 @@ C:\Users\Administrator\Music\laba \u0421\u0428\u0418\\u0420\u0435\u0448\u0435\u0
   plt.scatter(class_0[:, 0], class_0[:, 1], s=75,
 C:\Users\Administrator\Music\laba \u0421\u0428\u0418\\u0420\u0435\u0448\u0435\u043d\u0438\u044f\LR_5\src\LR_5_task_2.py:29: UserWarning: You passed a edgecolor/edgecolors ('black') for an unfilled marker ('x').  Matplotlib is ignoring the edgecolor in favor of the facecolor.  This behavior may change in the future.
   plt.scatter(class_0[:, 0], class_0[:, 1], s=75,
-=== БЕЗ балансу ===
-
-########################################
+Без балансу:
 
 Classifier performance on training dataset (balance=False)
 
@@ -17,9 +15,6 @@ Classifier performance on training dataset (balance=False)
    macro avg       0.92      0.50      0.46      1125
 weighted avg       0.87      0.84      0.77      1125
 
-########################################
-
-########################################
 
 Classifier performance on test dataset (balance=False)
 
@@ -32,12 +27,8 @@ Classifier performance on test dataset (balance=False)
    macro avg       0.41      0.50      0.45       375
 weighted avg       0.67      0.82      0.73       375
 
-########################################
 
-
-=== З балансуванням class_weight='balanced' ===
-
-########################################
+З балансом class_weight='balanced':
 
 Classifier performance on training dataset (balance=True)
 
@@ -50,9 +41,6 @@ Classifier performance on training dataset (balance=True)
    macro avg       0.71      0.85      0.73      1125
 weighted avg       0.89      0.80      0.82      1125
 
-########################################
-
-########################################
 
 Classifier performance on test dataset (balance=True)
 
@@ -64,6 +52,4 @@ Classifier performance on test dataset (balance=True)
     accuracy                           0.78       375
    macro avg       0.72      0.84      0.73       375
 weighted avg       0.88      0.78      0.80       375
-
-########################################
 
