@@ -1,0 +1,16 @@
+Датасет Play Tennis (14 днів, 3 ознаки):
+  Outlook ∈ {Sunny, Overcast, Rain}
+  Humidity ∈ {High, Normal}
+  Wind ∈ {Weak, Strong}
+
+Варіант студента 22 → №7: ['Overcast', 'High', 'Strong']
+
+P(Yes | query) = 1.0000
+P(No  | query) = 0.0000
+Прогноз: Play = Yes
+
+Ручний розрахунок Naive Bayes:
+  P(Yes)·Π P(xᵢ|Yes) = 0.0317
+  P(No)·Π P(xᵢ|No)   = 0.0000
+  Нормалізована P(Yes) = 1.0000
+  Нормалізована P(No)  = 0.0000

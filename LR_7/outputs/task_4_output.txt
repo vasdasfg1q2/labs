@@ -1,0 +1,6 @@
+Affinity propagation: 4 clusters found
+
+Cluster 1 ==> Apple, Microsoft, Alphabet
+Cluster 2 ==> Tesla, Ford
+Cluster 3 ==> ExxonMobil, Chevron
+Cluster 4 ==> Coca-Cola, PepsiCo, McDonalds

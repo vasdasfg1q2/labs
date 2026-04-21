@@ -1,0 +1,15 @@
+Linear Regressor performance:
+Mean absolute error = 3.58
+Mean squared error = 20.31
+Median absolute error = 2.99
+Explained variance score = 0.86
+R2 score = 0.86
+
+Polynomial Regressor (degree=10) performance:
+Mean absolute error = 67.99
+Mean squared error = 88448.6
+R2 score = -587.72
+
+Прогноз для точки [[7.75, 6.35, 5.56]] (очікуване значення ~41.35):
+  Linear regression:      [36.05286276]
+  Polynomial regression:  [41.08240428]

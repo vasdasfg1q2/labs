@@ -1,0 +1,8 @@
+KMeans: n_clusters=5, n_points=350
+Cluster centers:
+  Cluster 0: (4.93, 5.02)
+  Cluster 1: (6.11, 8.58)
+  Cluster 2: (7.10, 2.02)
+  Cluster 3: (1.98, 8.05)
+  Cluster 4: (2.97, 1.97)
+Inertia: 433.80

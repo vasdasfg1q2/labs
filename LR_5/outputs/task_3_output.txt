@@ -1,0 +1,56 @@
+
+##### Searching optimal parameters for precision_weighted
+
+Grid scores for the parameter grid:
+  {'max_depth': 2, 'n_estimators': 100} --> 0.85
+  {'max_depth': 4, 'n_estimators': 100} --> 0.841
+  {'max_depth': 7, 'n_estimators': 100} --> 0.844
+  {'max_depth': 12, 'n_estimators': 100} --> 0.832
+  {'max_depth': 16, 'n_estimators': 100} --> 0.816
+  {'max_depth': 4, 'n_estimators': 25} --> 0.846
+  {'max_depth': 4, 'n_estimators': 50} --> 0.84
+  {'max_depth': 4, 'n_estimators': 100} --> 0.841
+  {'max_depth': 4, 'n_estimators': 250} --> 0.845
+
+Best parameters: {'max_depth': 2, 'n_estimators': 100}
+
+Performance report:
+
+              precision    recall  f1-score   support
+
+         0.0       0.94      0.81      0.87        79
+         1.0       0.81      0.86      0.83        70
+         2.0       0.83      0.91      0.87        76
+
+    accuracy                           0.86       225
+   macro avg       0.86      0.86      0.86       225
+weighted avg       0.86      0.86      0.86       225
+
+
+##### Searching optimal parameters for recall_weighted
+
+Grid scores for the parameter grid:
+  {'max_depth': 2, 'n_estimators': 100} --> 0.843
+  {'max_depth': 4, 'n_estimators': 100} --> 0.837
+  {'max_depth': 7, 'n_estimators': 100} --> 0.841
+  {'max_depth': 12, 'n_estimators': 100} --> 0.83
+  {'max_depth': 16, 'n_estimators': 100} --> 0.815
+  {'max_depth': 4, 'n_estimators': 25} --> 0.843
+  {'max_depth': 4, 'n_estimators': 50} --> 0.836
+  {'max_depth': 4, 'n_estimators': 100} --> 0.837
+  {'max_depth': 4, 'n_estimators': 250} --> 0.841
+
+Best parameters: {'max_depth': 2, 'n_estimators': 100}
+
+Performance report:
+
+              precision    recall  f1-score   support
+
+         0.0       0.94      0.81      0.87        79
+         1.0       0.81      0.86      0.83        70
+         2.0       0.83      0.91      0.87        76
+
+    accuracy                           0.86       225
+   macro avg       0.86      0.86      0.86       225
+weighted avg       0.86      0.86      0.86       225
+

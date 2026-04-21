@@ -1,0 +1,26 @@
+Датасет: 10000 точок, 14 ознак
+Порівняння алгоритмів (stratified 10-fold CV, accuracy):
+   LR: 0.7234 (0.0172)
+  LDA: 0.7455 (0.0166)
+  KNN: 0.5821 (0.0170)
+ CART: 0.7614 (0.0143)
+   NB: 0.6235 (0.0145)
+  SVM: 0.5061 (0.0064)
+
+Найкраща модель за CV: CART
+Accuracy на test: 0.7605
+
+Confusion matrix:
+[[764 248]
+ [231 757]]
+
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.77      0.75      0.76      1012
+           1       0.75      0.77      0.76       988
+
+    accuracy                           0.76      2000
+   macro avg       0.76      0.76      0.76      2000
+weighted avg       0.76      0.76      0.76      2000
+

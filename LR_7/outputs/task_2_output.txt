@@ -1,0 +1,5 @@
+Iris: 150 точок, 4 ознаки, 3 справжніх класи
+KMeans (k=5) inertia = 46.45
+KMeans (k=3) inertia = 78.85
+Adjusted Rand Index (k=3 vs true labels) = 0.7302
+(ARI = 1 ідеал; 0 — випадкові; типове значення для Iris k=3 ≈ 0.73)

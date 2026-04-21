@@ -1,0 +1,7 @@
+F1 score:       76.01%
+Accuracy:       79.56%
+Precision:      79.26%
+Recall:         79.56%
+F1 (test only): 75.75%
+
+Прогноз для тестової точки: <=50K

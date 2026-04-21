@@ -1,0 +1,9 @@
+Linear regressor performance on data_regr_2.txt:
+Mean absolute error = 2.42
+Mean squared error = 9.02
+Median absolute error = 2.14
+Explain variance score = -0.15
+R2 score = -1.61
+
+Коефіцієнти: β0 = 2.3084, β1 = -0.0863
+Рівняння прямої: y = 2.308 + -0.086·x

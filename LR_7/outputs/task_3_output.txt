@@ -1,0 +1,9 @@
+Mean Shift clustering on data_clustering.txt
+Bandwidth (estimated): 1.3045
+Number of clusters: 5
+Centers of clusters:
+  Cluster 1: (2.9557, 1.9578)
+  Cluster 2: (7.2069, 2.2084)
+  Cluster 3: (2.1760, 8.0328)
+  Cluster 4: (5.9796, 8.3908)
+  Cluster 5: (4.9947, 4.6584)

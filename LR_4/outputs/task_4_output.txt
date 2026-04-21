@@ -1,0 +1,7 @@
+Linear regression on load_diabetes (10 features, 442 samples)
+Coefficients (10):  [ -20.4  -265.89  564.65  325.56 -692.16  395.56   23.5   116.36  843.95
+   12.72]
+Intercept (β0):     154.3589
+R2 score:           0.4377
+Mean absolute error:44.8006
+Mean squared error: 3075.3307

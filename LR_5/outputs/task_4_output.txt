@@ -1,0 +1,14 @@
+
+ADABOOST REGRESSOR
+Mean squared error = 1.18
+Explained variance score = 0.47
+
+Relative feature importance:
+  MedInc     100.00
+  Longitude   92.85
+  Latitude    79.61
+  AveOccup    66.55
+  Population  51.82
+  AveRooms    45.86
+  HouseAge    31.65
+  AveBedrms   22.72

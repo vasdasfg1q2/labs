@@ -1,0 +1,41 @@
+Форма датасету: (25798, 9)
+Колонки: ['insert_date', 'origin', 'destination', 'start_date', 'end_date', 'train_type', 'price', 'train_class', 'fare']
+
+Перші 5 рядків:
+           insert_date    origin destination           start_date             end_date train_type  price         train_class      fare
+0  2019-04-22 08:00:25    MADRID     SEVILLA  2019-04-28 08:30:00  2019-04-28 11:14:00      ALVIA    NaN             Turista  Flexible
+1  2019-04-22 10:03:24    MADRID    VALENCIA  2019-05-20 06:45:00  2019-05-20 08:38:00        AVE  21.95             Turista     Promo
+2  2019-04-25 19:19:46    MADRID     SEVILLA  2019-05-29 06:20:00  2019-05-29 09:16:00    AV City  38.55             Turista     Promo
+3  2019-04-24 06:21:57   SEVILLA      MADRID  2019-05-03 08:35:00  2019-05-03 15:26:00      LD-MD  34.35  Turista con enlace   Promo +
+4  2019-04-19 21:13:55  VALENCIA      MADRID  2019-05-10 09:40:00  2019-05-10 11:20:00        AVE  45.30             Turista     Promo
+
+Пропущені значення по колонках:
+insert_date       0
+origin            0
+destination       0
+start_date        0
+end_date          0
+train_type        0
+price          3082
+train_class     103
+fare            103
+dtype: int64
+
+X shape: (22716, 5), y shape: (22716,)
+Розподіл класів (low/mid/high): [7349 7622 7745]
+
+=== GaussianNB на RENFE ===
+              precision    recall  f1-score   support
+
+         low       0.75      0.95      0.84      1837
+         mid       0.71      0.41      0.52      1906
+        high       0.47      0.55      0.51      1936
+
+    accuracy                           0.63      5679
+   macro avg       0.64      0.64      0.62      5679
+weighted avg       0.64      0.63      0.62      5679
+
+Confusion matrix:
+[[1742    6   89]
+ [  23  787 1096]
+ [ 566  308 1062]]

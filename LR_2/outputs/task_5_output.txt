@@ -1,0 +1,19 @@
+Ridge classifier на Iris
+Accuracy:          0.7556
+Precision:         0.8333
+Recall:            0.7556
+F1 Score:          0.7503
+Cohen Kappa:       0.6431
+Matthews Corrcoef: 0.6831
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        16
+           1       0.89      0.44      0.59        18
+           2       0.50      0.91      0.65        11
+
+    accuracy                           0.76        45
+   macro avg       0.80      0.78      0.75        45
+weighted avg       0.83      0.76      0.75        45
+

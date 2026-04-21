@@ -1,0 +1,8 @@
+Linear regressor performance:
+Mean absolute error = 0.59
+Mean squared error = 0.49
+Median absolute error = 0.51
+Explain variance score = 0.86
+R2 score = 0.86
+
+New mean absolute error = 0.59

@@ -1,0 +1,95 @@
+Ключі iris_dataset:
+['data', 'target', 'frame', 'target_names', 'DESCR', 'feature_names', 'filename', 'data_module']
+
+Назви відповідей: ['setosa' 'versicolor' 'virginica']
+Назви ознак: ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
+Тип масиву data: <class 'numpy.ndarray'>
+Форма масиву data: (150, 4)
+
+Перші 5 прикладів:
+[[5.1 3.5 1.4 0.2]
+ [4.9 3.  1.4 0.2]
+ [4.7 3.2 1.3 0.2]
+ [4.6 3.1 1.5 0.2]
+ [5.  3.6 1.4 0.2]]
+
+Тип target: <class 'numpy.ndarray'>
+Відповіді: [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2
+ 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+ 2 2]
+
+Форма dataset: (150, 5)
+
+Перші 20 рядків:
+    sepal-length  sepal-width  petal-length  petal-width        class
+0            5.1          3.5           1.4          0.2  Iris-setosa
+1            4.9          3.0           1.4          0.2  Iris-setosa
+2            4.7          3.2           1.3          0.2  Iris-setosa
+3            4.6          3.1           1.5          0.2  Iris-setosa
+4            5.0          3.6           1.4          0.2  Iris-setosa
+5            5.4          3.9           1.7          0.4  Iris-setosa
+6            4.6          3.4           1.4          0.3  Iris-setosa
+7            5.0          3.4           1.5          0.2  Iris-setosa
+8            4.4          2.9           1.4          0.2  Iris-setosa
+9            4.9          3.1           1.5          0.1  Iris-setosa
+10           5.4          3.7           1.5          0.2  Iris-setosa
+11           4.8          3.4           1.6          0.2  Iris-setosa
+12           4.8          3.0           1.4          0.1  Iris-setosa
+13           4.3          3.0           1.1          0.1  Iris-setosa
+14           5.8          4.0           1.2          0.2  Iris-setosa
+15           5.7          4.4           1.5          0.4  Iris-setosa
+16           5.4          3.9           1.3          0.4  Iris-setosa
+17           5.1          3.5           1.4          0.3  Iris-setosa
+18           5.7          3.8           1.7          0.3  Iris-setosa
+19           5.1          3.8           1.5          0.3  Iris-setosa
+
+Статистика:
+       sepal-length  sepal-width  petal-length  petal-width
+count    150.000000   150.000000    150.000000   150.000000
+mean       5.843333     3.054000      3.758667     1.198667
+std        0.828066     0.433594      1.764420     0.763161
+min        4.300000     2.000000      1.000000     0.100000
+25%        5.100000     2.800000      1.600000     0.300000
+50%        5.800000     3.000000      4.350000     1.300000
+75%        6.400000     3.300000      5.100000     1.800000
+max        7.900000     4.400000      6.900000     2.500000
+
+Розподіл за класами:
+class
+Iris-setosa        50
+Iris-versicolor    50
+Iris-virginica     50
+dtype: int64
+
+Порівняння алгоритмів (stratified 10-fold CV, accuracy):
+   LR: 0.9667 (0.0408)
+  LDA: 0.9750 (0.0382)
+  KNN: 0.9583 (0.0417)
+ CART: 0.9417 (0.0534)
+   NB: 0.9500 (0.0553)
+  SVM: 0.9833 (0.0333)
+
+Оцінка SVC на контрольній вибірці:
+Accuracy: 0.9666666666666667
+
+Confusion matrix:
+[[11  0  0]
+ [ 0 12  1]
+ [ 0  0  6]]
+
+Classification report:
+                 precision    recall  f1-score   support
+
+    Iris-setosa       1.00      1.00      1.00        11
+Iris-versicolor       1.00      0.92      0.96        13
+ Iris-virginica       0.86      1.00      0.92         6
+
+       accuracy                           0.97        30
+      macro avg       0.95      0.97      0.96        30
+   weighted avg       0.97      0.97      0.97        30
+
+Форма масиву X_new: (1, 4)
+Прогноз: ['Iris-setosa']
+Передбачена мітка: Iris-setosa

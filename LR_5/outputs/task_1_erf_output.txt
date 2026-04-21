@@ -1,0 +1,40 @@
+########################################
+
+ExtraTrees performance on training dataset
+
+              precision    recall  f1-score   support
+
+     Class-0       0.89      0.83      0.86       221
+     Class-1       0.82      0.84      0.83       230
+     Class-2       0.83      0.86      0.85       224
+
+    accuracy                           0.85       675
+   macro avg       0.85      0.85      0.85       675
+weighted avg       0.85      0.85      0.85       675
+
+########################################
+
+########################################
+
+ExtraTrees performance on test dataset
+
+              precision    recall  f1-score   support
+
+     Class-0       0.92      0.85      0.88        79
+     Class-1       0.84      0.84      0.84        70
+     Class-2       0.85      0.92      0.89        76
+
+    accuracy                           0.87       225
+   macro avg       0.87      0.87      0.87       225
+weighted avg       0.87      0.87      0.87       225
+
+########################################
+
+
+Confidence measure:
+Datapoint: [5 5]  probabilities: [0.489 0.28  0.231] -> Class-0
+Datapoint: [3 6]  probabilities: [0.667 0.124 0.209] -> Class-0
+Datapoint: [6 4]  probabilities: [0.258 0.495 0.247] -> Class-1
+Datapoint: [7 2]  probabilities: [0.108 0.625 0.267] -> Class-1
+Datapoint: [4 4]  probabilities: [0.334 0.215 0.451] -> Class-2
+Datapoint: [5 2]  probabilities: [0.187 0.288 0.526] -> Class-2

@@ -1,0 +1,2 @@
+Mean absolute error: 7.42
+Predicted traffic: 26
