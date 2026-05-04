@@ -40,25 +40,31 @@ x1 = ctrl.Antecedent(np.arange(0, 4.001, 0.01), "x1")
 x2 = ctrl.Antecedent(np.arange(0, 4.001, 0.01), "x2")
 y = ctrl.Consequent(np.arange(-10, 10.01, 0.05), "y")
 
-# x1: 3 трикутних терми (L, A, H) — методичка, крок 9-10
-x1["L"] = fuzz.trimf(x1.universe, [0, 0, 2])
-x1["A"] = fuzz.trimf(x1.universe, [0, 2, 4])
-x1["H"] = fuzz.trimf(x1.universe, [2, 4, 4])
+# x1: 3 трикутних терми (L, A, H) — методичка, крок 9-10, рис.2
+# Params з рис.2: L = [-1.6, 0, 1.6]. Решта — рівномірно на [0,4]
+# з кроком 2 (центри 0/2/4) і півшириною 1.6 (default «Add MFs» MATLAB).
+x1["L"] = fuzz.trimf(x1.universe, [-1.6, 0.0, 1.6])
+x1["A"] = fuzz.trimf(x1.universe, [ 0.4, 2.0, 3.6])
+x1["H"] = fuzz.trimf(x1.universe, [ 2.4, 4.0, 5.6])
 
-# x2: 5 гаусових термів (L, LA, A, HA, H) — методичка, крок 11-12
-sigma = 0.425  # перекриття сусідніх термів на рівні ~0.5
+# x2: 5 гаусових термів (L, LA, A, HA, H) — методичка, крок 11-12, рис.3
+# Params з рис.3 для L: gaussmf, σ=0.425, mean=0. Інші терми — рівномірно
+# на [0,4] з центрами 0/1/2/3/4.
+sigma = 0.425
 x2["L"]  = fuzz.gaussmf(x2.universe, 0.0, sigma)
 x2["LA"] = fuzz.gaussmf(x2.universe, 1.0, sigma)
 x2["A"]  = fuzz.gaussmf(x2.universe, 2.0, sigma)
 x2["HA"] = fuzz.gaussmf(x2.universe, 3.0, sigma)
 x2["H"]  = fuzz.gaussmf(x2.universe, 4.0, sigma)
 
-# y: 5 трикутних термів — методичка, крок 13-14
-y["L"]  = fuzz.trimf(y.universe, [-10, -10, -5])
+# y: 5 трикутних термів — методичка, крок 13-14, рис.4
+# Params з рис.4 для L: [-15, -10, -5]. Решта — рівномірно на [-10,10]
+# з кроком 5 (центри -10/-5/0/5/10) і півшириною 5.
+y["L"]  = fuzz.trimf(y.universe, [-15, -10, -5])
 y["LA"] = fuzz.trimf(y.universe, [-10,  -5,  0])
 y["A"]  = fuzz.trimf(y.universe, [ -5,   0,  5])
 y["HA"] = fuzz.trimf(y.universe, [  0,   5, 10])
-y["H"]  = fuzz.trimf(y.universe, [  5,  10, 10])
+y["H"]  = fuzz.trimf(y.universe, [  5,  10, 15])
 
 # 9 правил дослівно з методички (с.4). Правила 7 і 9 мають однакову
 # умову з різним виходом — залишено, max-агрегація відпрацює.
