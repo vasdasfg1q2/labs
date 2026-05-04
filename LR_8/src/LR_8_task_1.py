@@ -31,9 +31,6 @@ b = tf.Variable(tf.zeros((1,)), name="bias")
 optimizer = tf.keras.optimizers.SGD(learning_rate=1e-4)
 
 display_step = 2000
-print(f"TensorFlow {tf.__version__} — навчання y = k·x + b")
-print(f"n_samples={n_samples}, batch_size={batch_size}, num_steps={num_steps}")
-print()
 
 for i in range(num_steps):
     indices = np.random.choice(n_samples, batch_size, replace=False)
@@ -69,7 +66,7 @@ plt.plot(xs, k_val * xs + b_val, "r-", linewidth=2,
          label=f"навчена: y = {k_val:.2f}x + {b_val:.2f}")
 plt.plot(xs, 2 * xs + 1, "g--", linewidth=2, label="еталон: y = 2x + 1")
 plt.xlabel("X"); plt.ylabel("y")
-plt.title(f"Лінійна регресія (SGD, TensorFlow {tf.__version__})")
+plt.title("Лінійна регресія (SGD)")
 plt.legend()
 plt.grid(True, alpha=0.3)
 plt.tight_layout()

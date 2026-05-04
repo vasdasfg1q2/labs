@@ -1,0 +1,9 @@
+# Окремий набір залежностей для ЛР-8 (TensorFlow).
+# TF 2.21 не підтримує Python 3.14 основного venv курсу, тому
+# ця лаба живе у власному venv Решения/LR_8/.venv_tf/ на Python 3.12.
+# Встановлення:
+#   py -3.12 -m venv Решения/LR_8/.venv_tf
+#   Решения/LR_8/.venv_tf/Scripts/python.exe -m pip install -r Решения/LR_8/requirements_tf.txt
+tensorflow==2.21.0
+numpy==2.4.4
+matplotlib==3.10.8
