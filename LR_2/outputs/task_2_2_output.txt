@@ -1,5 +1,5 @@
 SVM з гаусовим ядром (rbf)
-Accuracy:  57.05%
-Precision: 75.2%
-Recall:    57.05%
-F1:        46.93%
+Accuracy:  78.19%
+Precision: 82.82%
+Recall:    78.19%
+F1:        71.51%

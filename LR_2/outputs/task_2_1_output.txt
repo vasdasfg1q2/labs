@@ -1,5 +1,5 @@
 SVM з поліноміальним ядром (degree=8)
-Accuracy:  52.8%
-Precision: 56.68%
-Recall:    52.8%
-F1:        42.63%
+Accuracy:  25.61%
+Precision: 80.99%
+Recall:    25.61%
+F1:        10.53%

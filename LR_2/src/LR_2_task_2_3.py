@@ -1,5 +1,6 @@
 import io
 import sys
+import warnings
 
 import numpy as np
 from sklearn import preprocessing
@@ -9,6 +10,8 @@ from sklearn.metrics import (
     accuracy_score, precision_score, recall_score, f1_score,
 )
 
+warnings.filterwarnings("ignore")
+
 if sys.stdout.encoding.lower() != "utf-8":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
@@ -17,8 +20,8 @@ input_file = "income_data.txt"
 X = []
 count_class1 = 0
 count_class2 = 0
-# для одноманітності з poly (2_2_1) та пришвидшення — 5000 на клас
-max_datapoints = 5000
+# той самий датасет, що й у task_1 (методичка с.6)
+max_datapoints = 25000
 
 with open(input_file, "r") as f:
     for line in f.readlines():
@@ -48,8 +51,9 @@ for i, item in enumerate(X[0]):
 X = X_encoded[:, :-1].astype(int)
 y = X_encoded[:, -1].astype(int)
 
-# SVM з сигмоїдальним ядром
-classifier = SVC(kernel="sigmoid", random_state=0)
+# SVM з сигмоїдальним ядром (методичка с.6)
+# max_iter обмежує час навчання на ~50k точок
+classifier = SVC(kernel="sigmoid", random_state=0, max_iter=20000)
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=5)

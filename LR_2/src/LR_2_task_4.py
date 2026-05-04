@@ -7,7 +7,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 
-warnings.filterwarnings("ignore")  # придушуємо ConvergenceWarning для LR
+warnings.filterwarnings("ignore")
 from sklearn import preprocessing
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.linear_model import LogisticRegression
@@ -17,6 +17,7 @@ from sklearn.metrics import (
 from sklearn.model_selection import (
     StratifiedKFold, cross_val_score, train_test_split,
 )
+from sklearn.multiclass import OneVsRestClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
@@ -29,13 +30,12 @@ os.makedirs("outputs", exist_ok=True)
 
 input_file = "income_data.txt"
 
-# на 6 алгоритмах × 10-fold CV повний набір рахується дуже довго,
-# тому скорочуємо до 5000 точок на клас (10000 total) — цього
-# достатньо для порівняння моделей
+# той самий датасет, що й у task_1 (методичка: «по аналогії із task 2.3»
+# для income_data — тобто повний набір з 25000 точок на клас)
 X = []
 count_class1 = 0
 count_class2 = 0
-max_datapoints = 5000
+max_datapoints = 25000
 
 with open(input_file, "r") as f:
     for line in f.readlines():
@@ -69,12 +69,18 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=1)
 
 models = []
-models.append(("LR", LogisticRegression(max_iter=1000)))
+# методичка с.15: LogisticRegression(solver='liblinear', multi_class='ovr').
+# multi_class у sklearn ≥1.7 видалено — використовуємо OneVsRestClassifier
+# як еквівалент OvR (тут income-датасет бінарний, тому ефективно це
+# просто звичайна логістична регресія, але обгортка лишається задля
+# дослівної відповідності методичці).
+models.append(("LR", OneVsRestClassifier(LogisticRegression(solver="liblinear"))))
 models.append(("LDA", LinearDiscriminantAnalysis()))
 models.append(("KNN", KNeighborsClassifier()))
 models.append(("CART", DecisionTreeClassifier()))
 models.append(("NB", GaussianNB()))
-models.append(("SVM", SVC(gamma="auto")))
+# на ~50k точок без масштабування SVC дуже повільний — обмежуємо max_iter
+models.append(("SVM", SVC(gamma="auto", max_iter=20000)))
 
 results = []
 names_list = []

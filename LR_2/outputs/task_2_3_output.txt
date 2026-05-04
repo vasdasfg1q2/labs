@@ -1,5 +1,5 @@
 SVM з сигмоїдальним ядром
-Accuracy:  53.15%
-Precision: 53.16%
-Recall:    53.15%
-F1:        53.15%
+Accuracy:  60.47%
+Precision: 60.64%
+Recall:    60.47%
+F1:        60.55%

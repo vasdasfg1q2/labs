@@ -1,6 +1,7 @@
 import io
 import os
 import sys
+import warnings
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -16,10 +17,13 @@ from sklearn.metrics import (
 from sklearn.model_selection import (
     StratifiedKFold, cross_val_score, train_test_split,
 )
+from sklearn.multiclass import OneVsRestClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
+
+warnings.filterwarnings("ignore")  # multi_class='ovr' deprecated в sklearn ≥1.5
 
 if sys.stdout.encoding.lower() != "utf-8":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
@@ -95,7 +99,11 @@ X_train, X_validation, Y_train, Y_validation = train_test_split(
 
 # --- крок 4. 6 моделей + stratified 10-fold CV ---
 models = []
-models.append(("LR", LogisticRegression(max_iter=200)))
+# методичка с.15: LogisticRegression(solver='liblinear', multi_class='ovr').
+# У sklearn ≥1.7 параметр multi_class видалено, а 'liblinear' сам не вміє
+# мультиклас. Тому загортаємо в OneVsRestClassifier — це і є OvR-стратегія,
+# яку методичка явно просить через `multi_class='ovr'`.
+models.append(("LR", OneVsRestClassifier(LogisticRegression(solver="liblinear"))))
 models.append(("LDA", LinearDiscriminantAnalysis()))
 models.append(("KNN", KNeighborsClassifier()))
 models.append(("CART", DecisionTreeClassifier()))

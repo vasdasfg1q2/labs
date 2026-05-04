@@ -1,13 +1,16 @@
 import io
 import sys
+import warnings
 
 import numpy as np
 from sklearn import preprocessing
 from sklearn.svm import SVC
-from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import (
     accuracy_score, precision_score, recall_score, f1_score,
 )
+
+warnings.filterwarnings("ignore")
 
 if sys.stdout.encoding.lower() != "utf-8":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
@@ -17,9 +20,9 @@ input_file = "income_data.txt"
 X = []
 count_class1 = 0
 count_class2 = 0
-# SVM з poly degree=8 на 25000 точок не сходиться за розумний час,
-# тому скорочуємо до 5000 на клас
-max_datapoints = 5000
+# той самий датасет, що й у task_1 (методичка с.5: «Використовуючи
+# набір даних та код з попереднього завдання...»)
+max_datapoints = 25000
 
 with open(input_file, "r") as f:
     for line in f.readlines():
@@ -49,8 +52,9 @@ for i, item in enumerate(X[0]):
 X = X_encoded[:, :-1].astype(int)
 y = X_encoded[:, -1].astype(int)
 
-# SVM з поліноміальним ядром, degree=8
-classifier = SVC(kernel="poly", degree=8, random_state=0)
+# SVM з поліноміальним ядром, degree=8 (методичка с.5)
+# max_iter=20000 — щоб poly d=8 на ~50k точок гарантовано завершився
+classifier = SVC(kernel="poly", degree=8, random_state=0, max_iter=20000)
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=5)
