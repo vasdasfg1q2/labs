@@ -2,6 +2,8 @@ import io
 import os
 import sys
 
+import matplotlib
+import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import cluster, covariance
 
@@ -66,3 +68,30 @@ print()
 for i in range(num_labels + 1):
     members = ", ".join(names[labels == i])
     print(f"Cluster {i+1} ==> {members}")
+
+# Візуалізація: проєктуємо компанії у 2D через перші дві головні компоненти
+# covariance-матриці (PCA-підхід), фарбуємо по кластерах AP.
+cov = edge_model.covariance_
+eigvals, eigvecs = np.linalg.eigh(cov)
+order = np.argsort(eigvals)[::-1]
+proj = cov @ eigvecs[:, order[:2]]
+
+fig, ax = plt.subplots(figsize=(7, 5))
+for i in range(num_labels + 1):
+    mask = labels == i
+    ax.scatter(proj[mask, 0], proj[mask, 1], s=120, label=f"Cluster {i+1}")
+    for x_, y_, name in zip(proj[mask, 0], proj[mask, 1], names[mask]):
+        ax.annotate(name, (x_, y_), fontsize=8, xytext=(5, 5),
+                    textcoords="offset points")
+ax.set_xlabel("PC 1")
+ax.set_ylabel("PC 2")
+ax.set_title("Affinity Propagation: групування компаній")
+ax.legend()
+ax.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.savefig("outputs/task_4_clusters.png", dpi=120)
+plt.close()
+
+if matplotlib.get_backend().lower() != "agg":
+    plt.show()
+plt.close("all")
